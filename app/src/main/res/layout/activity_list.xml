@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            xmlns:tools="http://schemas.android.com/tools"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@mipmap/bg_main">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+        <TextView
+                android:id="@+id/hello_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                tools:text="Hello Long"/>
+
+        <TextView
+                android:id="@+id/your_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/your_list"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:shadowColor="@color/colorWhite"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/hello_title"/>
+
+        <EditText
+                android:id="@+id/enter_todo_edt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/button_height"
+                android:background="@drawable/bg_enter_task"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_todo"
+                android:padding="@dimen/edit_text_padding"
+                android:textColorHint="@color/colorWhite"
+                android:textColor="@color/colorWhite"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/your_list"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/todo_rv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_todo_edt"/>
+
+
+        <ImageView
+                android:id="@+id/add_task_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/ic_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/todo_rv"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
+
